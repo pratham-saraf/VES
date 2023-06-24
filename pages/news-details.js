@@ -4,7 +4,7 @@ import PageBanner from "../components/Common/PageBanner";
 import axios from 'axios';
 
 function NewsDetails({ postDetails }) {
-    console.log(postDetails);
+    console.log("postDetails", postDetails);
     const title = postDetails.properties.title.title[0].plain_text;
 
     return (

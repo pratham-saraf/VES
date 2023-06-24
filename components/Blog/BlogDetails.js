@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import { ImFacebook, ImInstagram, ImPinterest, ImTwitter } from "react-icons/im";
 import BlogSidebar from "./BlogSidebar";
-export default function BlogDetails() {
+export default function BlogDetails({ postDetails }) {
 	return (
 		<div className="blog-details-wrapper section-padding mtm-30">
 			<div className="container">
@@ -19,6 +19,7 @@ export default function BlogDetails() {
 								</div>
 								<div className="post-date">
 									<span>Dec. 8, 2022</span>
+									{/* <span>{postDetails.url}</span> */}
 								</div>
 							</div>
 

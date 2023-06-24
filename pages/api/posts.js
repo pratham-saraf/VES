@@ -9,6 +9,8 @@ const notion = new Client({ auth: notionSecret });
 export default async function handler(req, res) {
 
   try {
+
+    console.log("Fetching data from Notion API...", notionDatabaseId)
     const query = await notion.databases.query({
       database_id: notionDatabaseId,
       filter: {
