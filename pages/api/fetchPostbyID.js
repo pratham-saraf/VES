@@ -6,8 +6,8 @@ const notionDatabaseId = process.env.NOTION_DATABASE_ID;
 const notion = new Client({ auth: notionSecret });
 
 export default async function handler(req, res) {
-    
-    const _postID = req.query.postID;
+
+    const _postID = req.query.post;
 
     try {
         const post = await notion.pages.retrieve({ page_id: _postID });
