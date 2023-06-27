@@ -49,7 +49,6 @@ export default function ReadBlog() {
                 title={titleContent}
                 content="The CVI is created by computing a decentralized volatility index from cryptocurrency option prices together with analyzing the market."
             />
-            <h1>Blog Details</h1>
             <BlogDetails postDetails={postDetails} />
             <p>Blog ID: {blog}</p>
             {/* Render the blog post details using the postDetails */}
