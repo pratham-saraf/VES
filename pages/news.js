@@ -18,7 +18,7 @@ export default function News({ posts }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch("/api/posts");
+  const response = await fetch("http://localhost:3000/api/posts");
   const data = await response.json();
   const formattedData = data.map((post) => ({
 	id: post.id,
