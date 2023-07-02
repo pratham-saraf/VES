@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
 export default function Footer() {
 	return (
 		<footer className="footer-wrapper">
@@ -11,12 +12,11 @@ export default function Footer() {
 								<div className="about-us-widget">
 									<Link href="/">
 										<a className="footer-logo d-block">
-											<img src="img/footer-logo.svg" alt="xmoze" />
+											<img src="img/logo.png" alt="ves" height="auto" width="100vw"/>
 										</a>
 									</Link>
 									<p>
-										Xmoze helps millions of people get the best Wordpress theme design and offers
-										software reviews, ratings, comprehensive services.
+									"Power your solar journey with actionable guides and accessible tools for success at Vibrant Energy Solutions.
 									</p>
 								</div>
 							</div>
@@ -29,7 +29,7 @@ export default function Footer() {
 								<ul>
 									<li>
 										<Link href="/about">
-											<a>About xmoze</a>
+											<a>About VES</a>
 										</Link>
 									</li>
 									<li>
@@ -37,20 +37,10 @@ export default function Footer() {
 											<a>Contact & support</a>
 										</Link>
 									</li>
-									<li>
-										<Link href="/#">
-											<a>Setting & privacy</a>
-										</Link>
-									</li>
-									<li>
-										<Link href="#">
-											<a>Setting & privacy</a>
-										</Link>
-									</li>
 								</ul>
 							</div>
 						</div>
-						<div className="col-xl-2 col-lg-3 offset-xl-1 col-md-6 col-12">
+						{/* <div className="col-xl-2 col-lg-3 offset-xl-1 col-md-6 col-12">
 							<div className="single-footer-widget wow fadeInLeft" data-wow-delay=".4s">
 								<div className="widget-title">
 									<h5>Services</h5>
@@ -78,7 +68,7 @@ export default function Footer() {
 									</li>
 								</ul>
 							</div>
-						</div>
+						</div> */}
 						<div className="col-xl-2 col-lg-3 offset-xl-1 col-md-6 col-12">
 							<div className="single-footer-widget wow fadeInLeft" data-wow-delay=".6s">
 								<div className="widget-title">
@@ -91,13 +81,8 @@ export default function Footer() {
 										</Link>
 									</li>
 									<li>
-										<Link href="#">
+										<Link href="/news">
 											<a>Blogs & guides</a>
-										</Link>
-									</li>
-									<li>
-										<Link href="#">
-											<a>Premium support</a>
 										</Link>
 									</li>
 									<li>
@@ -116,9 +101,9 @@ export default function Footer() {
 					<div className="footer-bottom-content d-md-flex justify-content-between">
 						<div className="site-copyright wow fadeInUp" data-wow-delay=".2" data-wow-duration="1s">
 							<p>
-								&copy; 2022{" "}
+								&copy; 2023{" "}
 								<Link href="#">
-									<a>Xmooze Theme</a>
+									<a>Vibrant Energy Solutions</a>
 								</Link>{" "}
 								All Rights Reserved.
 							</p>
@@ -133,12 +118,12 @@ export default function Footer() {
 									<FaFacebookF />
 								</a>
 							</Link>
-							<Link href="#">
+							<Link href="https://twitter.com/VibrantEnergyS">
 								<a>
 									<FaTwitter />
 								</a>
 							</Link>
-							<Link href="#">
+							<Link href="">
 								<a>
 									<FaInstagram />
 								</a>

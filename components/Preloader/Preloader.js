@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Preloader() {
+export default function Preloader({duration = 700}) {
 	const [showLoader, setShowLoader] = useState(true);
 	const [isLoded, setIsLoded] = useState(null);
 
@@ -9,9 +9,11 @@ export default function Preloader() {
 			setIsLoded("loaded");
 		});
 
+		console.log("Preloader.js: useEffect: duration: ", duration);
+
 		const timer = setTimeout(() => {
 			setShowLoader(false);
-		}, 700);
+		}, duration);
 
 		return () => clearTimeout(timer);
 	});

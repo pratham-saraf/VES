@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaBars, FaTimesCircle } from "react-icons/fa";
 import MenuItems from "./Menu/MenuItems";
 import { menuItems } from "./menuItems";
+import Image from "next/image";
 
 export default function NavbarTwo() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function NavbarTwo() {
 						<div className="logo">
 							<Link href="/">
 								<a>
-									<img src="/img/footer-3.svg" alt="Transland" />
+									<Image src="/img/footer-3.svg" alt="Transland" />
 								</a>
 							</Link>
 						</div>

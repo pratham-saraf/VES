@@ -1,62 +1,37 @@
 export const menuItems = [
 	{
-		title: "Demo",
-		path: "#",
-		submenu: [
-			{
-				title: "Home 1",
-				path: "/",
-			},
-			{
-				title: "Home 2",
-				path: "index-two",
-			},
-			{
-				title: "Home 3",
-				path: "index-three",
-			},
-		],
+	  title: "Home",
+	  path: "/",
 	},
 	{
-		title: "About",
-		path: "about",
+	  title: "About",
+	  path: "/about",
 	},
 	{
-		title: "Services",
-		path: "services",
+	  title: "Services",
+	  path: "/services",
+	  submenu: [
+		{
+		  title: "Services",
+		  path: "/services",
+		},
+		{
+		  title: "Faq",
+		  path: "/faq",
+		},
+	  ],
 	},
 	{
-		title: "Pages",
-		path: "#",
-		submenu: [
-			{
-				title: "Faq",
-				path: "faq",
-			},
-			{
-				title: "Team",
-				path: "team",
-			},
-			{
-				title: "Portfolio",
-				path: "projects",
-			},
-			{
-				title: "Pricing",
-				path: "pricing",
-			},
-			{
-				title: "404",
-				path: "404",
-			},
-		],
+	  title: "Pricelist",
+	  path: "/projects",
 	},
 	{
-		title: "News",
-		path: "news",
+	  title: "Blogs",
+	  path: "/news",
 	},
 	{
-		title: "Contact",
-		path: "contact",
+	  title: "Contact",
+	  path: "/contact",
 	},
-];
+  ];
+  

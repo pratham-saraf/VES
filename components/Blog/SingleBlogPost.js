@@ -16,11 +16,11 @@ export default function SingleBlogPost({ post }) {
 					</div>
 				</div>
 				<h4>
-					<Link href={{ pathname: '/news-details', query: { post: JSON.stringify(post.id) } }}>
+					<Link href="/blog-details/[blogId]" as={`/blog-details/${post.id}`}>
 						<a>{post.title}</a>
 					</Link>
 				</h4>
-				<p> {post.content} ...</p>
+				<p> {post.excerpt} ...</p>
 
 				<Link href="/blog-details/[blogId]" as={`/blog-details/${post.id}`}>
 					<a className="read-more-link">

@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import Link from "next/link";
 export default function RecentProjectSlider() {
 	const settings = {
 		dots: false,
@@ -19,7 +20,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<a href="/project-details">Work station</a>
+							<Link href="/project-details">Work station</Link>
 						</h5>
 						<span>UI/UX Design</span>
 					</div>
@@ -31,7 +32,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<a href="/project-details">Flowers in vases</a>
+							<Link href="/project-details">Flowers in vases</a>
 						</h5>
 						<span>Photography</span>
 					</div>
@@ -43,7 +44,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<a href="/project-details">Creative art work</a>
+							<Link href="/project-details">Creative art work</a>
 						</h5>
 						<span>Branding</span>
 					</div>
@@ -55,7 +56,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<a href="/project-details">art design</a>
+							<Link href="/project-details">art design</a>
 						</h5>
 						<span>Creative</span>
 					</div>
@@ -67,7 +68,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<a href="/project-details">Open books</a>
+							<Link href="/project-details">Open books</a>
 						</h5>
 						<span>Creative</span>
 					</div>

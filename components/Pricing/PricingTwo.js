@@ -1,12 +1,13 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import SinglePriceTwo from "./SinglePricingTwo";
-
+import Image
+ from "next/image";
 export default function PricingTwo({ content }) {
 	return (
 		<Tabs>
 			<div className="pricing-toggle">
 				<div className="pricing-arrow">
-					<img src="/img/pricing-draw.png" alt="" />
+					<Image src="/img/pricing-draw.png" alt="" />
 				</div>
 				<TabList>
 					<div className="nav nav-pills mb-3">

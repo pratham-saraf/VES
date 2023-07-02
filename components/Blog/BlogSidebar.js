@@ -1,44 +1,99 @@
-import Link from "next/link";
-import { AiOutlineSearch } from "react-icons/ai";
-export default function BlogSidebar() {
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { AiOutlineSearch } from 'react-icons/ai';
+
+export default function BlogSidebar({ searchTerm, setSearchTerm ,setSelectedCategory })  {
+    const [posts, setPosts] = useState([]);
+	const [categories, setCategories] = useState([]);
+	const [tags, setTags] = useState([]);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await fetch('/api/posts');
+			result = await result.json();
+			// console.log(result);
+			const formattedData = result.map((post) => ({
+				id: post.id,
+				title: post.properties.Name.title[0].plain_text,
+				author: post.properties.Author.rich_text[0].plain_text,
+				content: post.properties.Content.rich_text[0].plain_text,
+				date: new Date(post.properties.Date.date.start).toLocaleDateString(),
+				imageUrl: post.properties.Image.files[0].file.url,
+				link: post.url,
+				tags: post.properties.Tags.multi_select,
+				category: post.properties.Category.select.name
+			}));
+            setPosts(formattedData);
+			console.log(formattedData);
+
+			// Extract all categories from the posts
+			const allCategories = formattedData.map(post => post.category);
+
+			console.log("allCategories");
+			console.log(allCategories);
+
+			// Filter out duplicates
+			const uniqueCategories = allCategories.filter((category, index, self) => self.indexOf(category) === index);
+			
+			console.log("uniqueCategories");
+			console.log(uniqueCategories);
+
+			setCategories(uniqueCategories);
+			
+			const allTags = formattedData.flatMap(post => post.tags.map(tag => tag.name));
+			console.log("allTags");
+			console.log(allTags);
+
+			const uniqueTags = allTags.filter((tag, index, self) => self.indexOf(tag) === index);
+
+			console.log("uniqueTags");
+			console.log(uniqueTags);
+
+			setTags(uniqueTags);
+
+        };
+
+        fetchData();
+
+
+
+
+    }, []);
+
 	return (
 		<>
 			<div className="blog-sidebar-wrapper fw500">
 				<div className="single-sidebar-wid search-box-widgets">
-					<form action="#">
-						<input type="text" placeholder="Type to search..." />
-						<button type="submit">
-							<AiOutlineSearch />
-						</button>
-					</form>
+				<form action="#">
+					<input 
+						type="text" 
+						placeholder="Type to search..." 
+						value={searchTerm} 
+						onChange={(e) => setSearchTerm(e.target.value)} 
+					/>
+					<button type="submit">
+						<AiOutlineSearch />
+					</button>
+				</form>
 				</div>
 				<div className="single-sidebar-wid">
 					<div className="wid-title">
 						<h5>Blog Categories</h5>
 					</div>
 					<div className="widget_categories">
-						<ul>
-							<li>
-								<Link href="/news">
-									<a>Cryptocurrency (05)</a>
-								</Link>
-							</li>
-							<li>
-								<Link href="/news">
-									<a>Web Development (18)</a>
-								</Link>
-							</li>
-							<li>
-								<Link href="/news">
-									<a>Marketing (59)</a>
-								</Link>
-							</li>
-							<li>
-								<Link href="/news">
-									<a>Data Analysis (03)</a>
-								</Link>
-							</li>
-						</ul>
+					<ul>
+						<li>
+							<a onClick={() => setSelectedCategory("")}>All</a>
+						</li>
+						{categories.map((category, index) => (
+							<li key={index}>
+							<a onClick={() => setSelectedCategory(category)}>{category}</a>
+						  </li>
+						))}
+					</ul>
+
+
 					</div>
 				</div>
 				<div className="single-sidebar-wid">
@@ -46,60 +101,21 @@ export default function BlogSidebar() {
 						<h5>Recent Posts</h5>
 					</div>
 					<div className="recent-posts">
-						<div className="single-post-item">
-							<Link href="/news-details">
-								<a>What is the crypto volatility index (CVI)?</a>
-							</Link>
-							<span>Dec. 8, 2022</span>
-						</div>
-						<div className="single-post-item">
-							<Link href="/news-details">
-								<a>Terra leads layer 1 resurgence targeting $100</a>
-							</Link>
-							<span>Nov. 27, 2022</span>
-						</div>
-						<div className="single-post-item">
-							<Link href="/news-details">
-								<a>Ethereum launches kintsugi testnet to prepare </a>
-							</Link>
-							<span>Nov. 18, 2022</span>
-						</div>
-						<div className="single-post-item">
-							<Link href="/news-details">
-								<a>Christie's sold $150M worth of NFTs this year</a>
-							</Link>
-							<span>Oct. 09, 2022</span>
-						</div>
-						<div className="single-post-item">
-							<Link href="/news-details">
-								<a>Ubisoft will pursue NFT plans despite blowback</a>
-							</Link>
-							<span>Jan. 05, 2022</span>
-						</div>
-					</div>
-				</div>
-				<div className="single-sidebar-wid">
-					<div className="wid-title">
-						<h5>Popular Tags</h5>
-					</div>
-					<div className="tagcloud">
-						<Link href="/news">
-							<a>Sponsored</a>
-						</Link>
-						<Link href="/news">
-							<a>Business</a>
-						</Link>
-						<Link href="/news">
-							<a>UI / UX Design</a>
-						</Link>
-						<Link href="/news">
-							<a>Marketing</a>
-						</Link>
+							{posts.slice(0, 5).map((post) =>(
+								<div className="single-post-item" key={post.id}>
+									<Link href="/blog-details/[blogId]" as={`/blog-details/${post.id}`}>
+										<a>{post.title}</a>
+									</Link>
+									<span>{post.date}</span>
+								</div>
+							))
+								}
+
 					</div>
 				</div>
 			</div>
 
-			<div className="newsletter-subscribe-widgets text-white">
+			{/* <div className="newsletter-subscribe-widgets text-white">
 				<div className="wid-title">
 					<h5>Join Us!</h5>
 				</div>
@@ -112,7 +128,7 @@ export default function BlogSidebar() {
 						</button>
 					</form>
 				</div>
-			</div>
+			</div> */}
 		</>
 	);
 }

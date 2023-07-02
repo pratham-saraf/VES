@@ -1,4 +1,4 @@
-export default [
+const teamData = [
 	{
 		id: 1,
 		title: " CEO and founder",
@@ -54,3 +54,5 @@ export default [
 		img: "man.jpg",
 	},
 ];
+
+export default teamData;

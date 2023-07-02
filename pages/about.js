@@ -20,8 +20,8 @@ export default function about() {
 			<ContentOne />
 			<FeaturesThree />
 			<ContentTwo />
-			<Testimonial />
-			<TeamTwo />
+			{/* <Testimonial /> */}
+			{/* <TeamTwo /> */}
 			<CallToAction />
 		</>
 	);

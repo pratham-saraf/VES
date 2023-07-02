@@ -1,38 +1,58 @@
 export const servicesData = [
 	{
 		id: 1,
-		title: "Automated Reports",
-		content: "Many desktop publishing packages and web page editors now use as their default model.",
-		icon: "block-chain.svg",
-	},
-	{
+		title: "Solar Panel Installation",
+		content: "Get professional solar panel installation services.",
+		icon: "installation.svg",
+	  },
+	  {
 		id: 2,
-		title: "User Journey Flow",
-		content: "Many desktop publishing packages and web page editors now use as their default model.",
-		icon: "mukut.svg",
-	},
-	{
+		title: "Solar Panel Maintenance",
+		content: "Ensure the performance and longevity of your solar system.",
+		icon: "maintenance.svg",
+	  },
+	  {
 		id: 3,
-		title: "Management & Security",
-		content: "Many desktop publishing packages and web page editors now use as their default model.",
-		icon: "secure.svg",
-	},
-	{
+		title: "Solar Energy Analysis",
+		content: "Analyze the potential benefits and savings of solar energy.",
+		icon: "analysis.svg",
+	  },
+	  {
 		id: 4,
-		title: "Digital Marketing",
-		content: "Many desktop publishing packages and web page editors now use as their default model.",
-		icon: "marketing.svg",
-	},
-	{
+		title: "Solar Financing Options",
+		content: "Explore various financing options for solar projects.",
+		icon: "financing.svg",
+	  },
+	  {
 		id: 5,
-		title: "Reporting & Analysis",
-		content: "Many desktop publishing packages and web page editors now use as their default model.",
-		icon: "display.svg",
-	},
-	{
+		title: "Solar System Monitoring",
+		content: "Monitor the performance of your solar panels in real-time.",
+		icon: "monitoring.svg",
+	  },
+	  {
 		id: 6,
-		title: "Wireframe Creation",
-		content: "Many desktop publishing packages and web page editors now use as their default model.",
-		icon: "micro.svg",
-	},
+		title: "Solar Energy Education",
+		content: "Learn about the advantages and principles of solar energy.",
+		icon: "education.svg",
+	  },
+	  {
+		id: 6,
+		title: "Illumination Design",
+		content: "Learn about the advantages and principles of solar energy.",
+		icon: "education.svg",
+	  },
+	  {
+		id: 6,
+		title: "High Mast Lighting",
+		content: "Learn about the advantages and principles of solar energy.",
+		icon: "education.svg",
+	  },
+	  {
+		id: 6,
+		title: "Facade Lighting",
+		content: "Learn about the advantages and principles of solar energy.",
+		icon: "education.svg",
+	  },
+
+	  
 ];

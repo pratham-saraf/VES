@@ -14,12 +14,12 @@ export default function Hero() {
 								clean and sustainable energy solutions for your home or business.
 								With our expertise and cutting-edge technology, we make solar energy accessible and affordable.
 								</p>
-								<a href="#" className="app-download-btn">
+								{/* <a href="#" className="app-download-btn">
 									<img src="img/apple.png" alt="" />
-								</a>
-								<a href="#" className="app-download-btn">
+								</a> */}
+								{/* <a href="#" className="app-download-btn">
 									<img src="img/android.png" alt="" />
-								</a>
+								</a> */}
 								<div className="tri-arrow">
 									<img src="img/icons/tir-shape.svg" alt="" />
 								</div>

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import PageBanner from "./../components/Common/PageBanner";
+import Image from "next/image";
 export default function servicesDetails() {
 	return (
 		<>
@@ -15,7 +16,7 @@ export default function servicesDetails() {
 				<div className="container">
 					<div className="col-lg-10 col-12 offset-lg-1">
 						<div className="services-contents">
-							<img src="/img/single-service.jpg" alt="" />
+							<Image src="/img/single-service.jpg" alt="" />
 
 							<p className="mt-4">
 								<b>
@@ -94,7 +95,7 @@ export default function servicesDetails() {
 								</div>
 
 								<div className="wave-line d-none d-xl-block">
-									<img src="/img/wave.png" alt="" />
+									<Image src="/img/wave.png" alt="" />
 								</div>
 							</div>
 

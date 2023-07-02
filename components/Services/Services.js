@@ -10,8 +10,7 @@ export default function Services() {
 						<div className="section-title wow fadeInUp" data-wow-duration="1s">
 							<h2>Awesome services grow your business value</h2>
 							<p>
-								Xmoze is a simple software that allows you to run your business easily. One software
-								tool brings the whole business together.
+							Vibrant Solar Solutions helps businesses adopt solar energy, saving costs and promoting sustainability. We provide engineering, design, and installation services.
 							</p>
 						</div>
 					</div>

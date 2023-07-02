@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
+import Image from "next/image";
 
 export default function SingleService({ service }) {
 	return (
@@ -10,11 +11,11 @@ export default function SingleService({ service }) {
 			<div className="content">
 				<h4>{service.title}</h4>
 				<p>{service.content}</p>
-				<Link href="/services-details">
+				{/* <Link href="/services-details">
 					<a>
 						View Details <BsArrowRight />
 					</a>
-				</Link>
+				</Link> */}
 			</div>
 		</div>
 	);

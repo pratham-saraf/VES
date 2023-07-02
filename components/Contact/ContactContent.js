@@ -10,26 +10,26 @@ export default function ContactContent() {
 			<div className="container">
 				<div className="row text-center">
 					<div className="col-md-6 col-xl-4">
-						<ContactCard
-							icon={<AiTwotonePhone />}
-							contentOne="+088-436-258-001"
-							ContentTwo="+991-656-654-988"
-							className="box1"
-						/>
+					<div className={`single-contact-box box2`}>
+							<div className="icon"><AiTwotonePhone /></div>
+							<div className="contact-info">
+								<span> <a href="tel:+919820860111">+91-9820860111 </a></span>
+							</div>
+						</div>
 					</div>
 					<div className="col-md-6 col-xl-4">
-						<ContactCard
-							icon={<FaEnvelope />}
-							contentOne="info@example.com"
-							ContentTwo="job@example.com"
-							className="box2"
-						/>
+						<div className={`single-contact-box box2`}>
+							<div className="icon"><FaEnvelope /></div>
+							<div className="contact-info">
+								<span> <a href="mailto:vibrantenergysolutions@gmail.com">vibrantenergysolutions@gmail.com </a></span>
+							</div>
+						</div>
 					</div>
 					<div className="col-md-6 col-xl-4">
 						<ContactCard
 							icon={<FaMapMarkerAlt />}
-							contentOne="2118 Thornridge Cir, New York."
-							ContentTwo="4140 Rd. Allentown, Mexico."
+							contentOne="115 , Manbhavan Nagar "
+							ContentTwo="Indore , India"
 							className="box3"
 						/>
 					</div>

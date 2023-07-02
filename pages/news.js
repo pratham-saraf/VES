@@ -10,7 +10,7 @@ export default function News() {
 			</Head>
 			<PageBanner
 				title="Our Blogs"
-				content="An automated report is a management tool used by professionals to create and share business reports at a specific time interval without the need to update."
+				content="An up to date feed full of Knowledge and Information."
 			/>
 			<Blog />
 		</>

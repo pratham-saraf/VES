@@ -12,10 +12,10 @@ export default function services() {
 			</Head>
 			<PageBanner
 				title="Our Services"
-				content="We work to create some of the most attractive and meaningful places for small businesses."
+				content="We work to create some of the most energy efficient solutions for all our clients."
 			/>
 			<Services />
-			<PricingContent />
+			{/* <PricingContent /> */}
 			<FaqWithVideoModal />
 		</>
 	);

@@ -15,7 +15,7 @@ export default function Navbar() {
 						<div className="logo">
 							<Link href="/">
 								<a>
-									<img src="/img/logo.png" alt="VES" />
+									<img src="/img/logo.png" alt="VES" height="70vw"/>
 								</a>
 							</Link>
 						</div>
@@ -45,19 +45,25 @@ export default function Navbar() {
 										</ul>
 									</li> */}
 									<li>
+										<Link href="/">
+											<a>Home</a>
+										</Link>
+									</li>
+									<li>
 										<Link href="/about">
 											<a>About</a>
 										</Link>
 									</li>
 									<li>
-										{" "}
 										<Link href="/services">
 											<a>Services</a>
 										</Link>
 									</li>
 									<li>
-										<a href="#">Pages</a>
-										<ul className="sub-menu">
+										<Link href="/faq">
+											<a>FAQ</a>
+										</Link>
+										{/* <ul className="sub-menu">
 											<li>
 												<Link href="/faq">
 													<a>faq</a>
@@ -69,25 +75,25 @@ export default function Navbar() {
 												</Link>
 											</li>
 											<li>
-												<Link href="/projects">
-													<a>portfolio</a>
-												</Link>
-											</li>
-											<li>
 												<Link href="/pricing">
 													<a>pricing</a>
 												</Link>
 											</li>
-											{/* <li>
+											<li>
 												<Link href="/404">
 													<a>404</a>
 												</Link>
-											</li> */}
-										</ul>
+											</li>
+										</ul> */}
+									</li>
+									<li>
+										<Link href="/projects">
+											<a>Pricelist</a>
+										</Link>
 									</li>
 									<li>
 										<Link href="/news">
-											<a>News</a>
+											<a>Blogs</a>
 										</Link>
 									</li>
 									<li>
@@ -99,7 +105,7 @@ export default function Navbar() {
 							</div>
 						</div>
 						<div className="header-right-element text-white">
-							<a href="#">login</a>
+							{/* <a href="#">login</a> */}
 							<Link href="/contact">
 								<a className="theme-btn black">get started</a>
 							</Link>

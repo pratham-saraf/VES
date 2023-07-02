@@ -5,7 +5,7 @@ export const projectsData = [
 		category: "Branding",
 		image: "1.jpg",
 		filterValue: "branding",
-		toBeRemoved: false,
+		toBeRemoved: true,
 	},
 	{
 		id: 2,

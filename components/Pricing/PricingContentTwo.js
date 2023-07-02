@@ -1,4 +1,5 @@
 import PricingTwo from "./PricingTwo";
+import Image from "next/image";
 
 const pricingData = [
 	{
