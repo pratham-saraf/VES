@@ -2,7 +2,7 @@ import Head from "next/head";
 import Blog from "../components/Blog/Blog";
 import PageBanner from "../components/Common/PageBanner";
 
-export default function News() {
+export default function News({ posts }) {
 	return (
 		<>
 			<Head>
@@ -12,7 +12,31 @@ export default function News() {
 				title="Our Blogs"
 				content="An up to date feed full of Knowledge and Information."
 			/>
-			<Blog />
+			<Blog posts={posts} />
 		</>
 	);
+}
+
+export async function getStaticProps() {
+  const response = await fetch("/api/posts");
+  const data = await response.json();
+  const formattedData = data.map((post) => ({
+	id: post.id,
+	title: post.properties.Name.title[0].plain_text,
+	author: post.properties.Author.rich_text[0].plain_text,
+	content: post.properties.Content.rich_text[0].plain_text,
+	date: new Date(post.properties.Date.date.start).toLocaleDateString(),
+	imageUrl: post.properties.Image.files[0].file.url,
+	link: post.url,
+	tags: post.properties.Tags.multi_select,
+	category: post.properties.Category.select.name,
+	excerpt : post.properties.Excerpt.rich_text[0].text.content
+}));
+
+  return {
+    props: {
+      posts: formattedData,
+    },
+    revalidate: 60, // Use ISR, pages are recreated in the background as traffic comes in
+  };
 }
