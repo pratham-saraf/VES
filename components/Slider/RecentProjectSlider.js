@@ -32,7 +32,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<Link href="/project-details">Flowers in vases</a>
+							<Link href="/project-details">Flowers in vases</Link>
 						</h5>
 						<span>Photography</span>
 					</div>
@@ -44,7 +44,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<Link href="/project-details">Creative art work</a>
+							<Link href="/project-details">Creative art work</Link>
 						</h5>
 						<span>Branding</span>
 					</div>
@@ -56,7 +56,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<Link href="/project-details">art design</a>
+							<Link href="/project-details">art design</Link>
 						</h5>
 						<span>Creative</span>
 					</div>
@@ -68,7 +68,7 @@ export default function RecentProjectSlider() {
 					></div>
 					<div className="contents">
 						<h5>
-							<Link href="/project-details">Open books</a>
+							<Link href="/project-details">Open books</Link>
 						</h5>
 						<span>Creative</span>
 					</div>
