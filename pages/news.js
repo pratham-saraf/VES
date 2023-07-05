@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Blog from "../components/Blog/Blog";
 import PageBanner from "../components/Common/PageBanner";
+import {loadPosts} from "../lib/load-posts";
 
 export default function News({ posts }) {
 	return (
@@ -18,8 +19,8 @@ export default function News({ posts }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(`http://localhost:3000/api/posts`);
-  const data = await response.json();
+
+  const data = await loadPosts();
   const formattedData = data.map((post) => ({
 	id: post.id,
 	title: post.properties.Name.title[0].plain_text,

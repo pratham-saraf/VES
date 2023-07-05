@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import PageBanner from "../components/Common/PageBanner";
+import { loadPricelists } from "../lib/load-pricelists";
 const IsotopeSection = dynamic(() => import("../components/Isotope/IsotopeSection"), {
 	ssr: false,
 });
@@ -22,8 +23,8 @@ export default function projects({projects, uniqueCategories}) {
 
 export async function getStaticProps() {
 	try {
-		const res = await fetch("http://localhost:3000/api/pricelists");
-		const data = await res.json();
+		const data = await loadPricelists();
+	
 
 		const formattedData = data.map((post) => ({
 			id: post.id,
