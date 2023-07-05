@@ -12,8 +12,8 @@ export default function projects({projects, uniqueCategories}) {
 				<title>Projects Page</title>
 			</Head>
 			<PageBanner
-				title="Masonry Portfolio"
-				content="A business portfolio accurately describes the strengths of a company & helps the company utilize the most attractive."
+				title="Our Solar and Electrical Portfolio"
+				content="Explore our range of solar and electrical solutions. We offer top-tier solar panel installation, lighting solutions, and more from a variety of leading brands. View our pricelist to find the best fit for your needs."
 			/>
 			<IsotopeSection projects={projects} uniqueCategories={uniqueCategories} />
 		</>
