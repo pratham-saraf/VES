@@ -45,7 +45,7 @@ export async function getStaticProps() {
 				projects: formattedData,
 				uniqueCategories: uniqueCategories,
 			},
-			revalidate: 86400,
+			revalidate: 60,
 		};
 	} catch (error) {
 		console.error("Error fetching data from Notion API:", error);
