@@ -2,64 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-export default function BlogSidebar({ searchTerm, setSearchTerm ,setSelectedCategory })  {
-    const [posts, setPosts] = useState([]);
-	const [categories, setCategories] = useState([]);
-	const [tags, setTags] = useState([]);
 
+export default function BlogSidebar({ searchTerm, setSearchTerm ,setSelectedCategory, posts, categories })  {
+	// log all the passed props
+	console.log({ searchTerm, setSearchTerm ,setSelectedCategory, posts, categories });
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await fetch('/api/posts');
-			result = await result.json();
-			// console.log(result);
-			const formattedData = result.map((post) => ({
-				id: post.id,
-				title: post.properties.Name.title[0].plain_text,
-				author: post.properties.Author.rich_text[0].plain_text,
-				content: post.properties.Content.rich_text[0].plain_text,
-				date: new Date(post.properties.Date.date.start).toLocaleDateString(),
-				imageUrl: post.properties.Image.files[0].file.url,
-				link: post.url,
-				tags: post.properties.Tags.multi_select,
-				category: post.properties.Category.select.name
-			}));
-            setPosts(formattedData);
-			console.log(formattedData);
-
-			// Extract all categories from the posts
-			const allCategories = formattedData.map(post => post.category);
-
-			console.log("allCategories");
-			console.log(allCategories);
-
-			// Filter out duplicates
-			const uniqueCategories = allCategories.filter((category, index, self) => self.indexOf(category) === index);
-			
-			console.log("uniqueCategories");
-			console.log(uniqueCategories);
-
-			setCategories(uniqueCategories);
-			
-			const allTags = formattedData.flatMap(post => post.tags.map(tag => tag.name));
-			console.log("allTags");
-			console.log(allTags);
-
-			const uniqueTags = allTags.filter((tag, index, self) => self.indexOf(tag) === index);
-
-			console.log("uniqueTags");
-			console.log(uniqueTags);
-
-			setTags(uniqueTags);
-
-        };
-
-        fetchData();
-
-
-
-
-    }, []);
 
 	return (
 		<>

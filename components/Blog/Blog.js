@@ -9,6 +9,16 @@ export default function Blog({ posts }) {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [selectedCategory, setSelectedCategory] = useState("");
 
+	
+	const allCategories = posts.map(post => post.category);
+
+	// Filter out duplicates
+	const uniqueCategories = allCategories.filter((category, index, self) => self.indexOf(category) === index);
+	
+	const allTags = posts.flatMap(post => post.tags.map(tag => tag.name));
+	const uniqueTags = allTags.filter((tag, index, self) => self.indexOf(tag) === index);
+
+
 	let filteredPosts = posts.filter(
 		(post) =>
 		  (post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -48,7 +58,7 @@ export default function Blog({ posts }) {
 						/>
 					</div>
 					<div className="col-xl-4 col-12">
-						<BlogSidebar searchTerm={searchTerm} setSearchTerm={setSearchTerm} setSelectedCategory={setSelectedCategory} />
+					<BlogSidebar searchTerm={searchTerm} setSearchTerm={setSearchTerm} setSelectedCategory={setSelectedCategory} posts={posts} categories={uniqueCategories} />
 					</div>
 				</div>
 			</div>

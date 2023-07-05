@@ -23,6 +23,7 @@ export default function SingleBlogPost({ post }) {
 				<p> {post.excerpt} ...</p>
 
 				<Link href="/blog-details/[blogId]" as={`/blog-details/${post.id}`}>
+					{/* console.log(post.id); */}
 					<a className="read-more-link">
 						read more <BsArrowRight color="#5B7486" size={18} />
 					</a>
