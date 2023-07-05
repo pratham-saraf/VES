@@ -4,7 +4,8 @@ import PageBanner from "../components/Common/PageBanner";
 const IsotopeSection = dynamic(() => import("../components/Isotope/IsotopeSection"), {
 	ssr: false,
 });
-export default function projects() {
+
+export default function projects({projects, uniqueCategories}) {
 	return (
 		<>
 			<Head>
@@ -14,7 +15,44 @@ export default function projects() {
 				title="Masonry Portfolio"
 				content="A business portfolio accurately describes the strengths of a company & helps the company utilize the most attractive."
 			/>
-			<IsotopeSection />
+			<IsotopeSection projects={projects} uniqueCategories={uniqueCategories} />
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	try {
+		const res = await fetch("https://ves-whn8.vercel.app/api/pricelists");
+		const data = await res.json();
+
+		const formattedData = data.map((post) => ({
+			id: post.id,
+			title: post.properties.Title.title[0].plain_text,
+			link: post.properties.Link.url,
+			// convert category to lowercase to make it easier to filter
+			filterValue: post.properties.Category.select.name.toLowerCase(),
+			category: post.properties.Category.select.name,
+			image : post.properties.Image.files[0].file.url
+	
+		}));
+
+		const categories = formattedData.map((item) => item.category);
+		const uniqueCategories = [...new Set(categories)];
+
+		return {
+			props: {
+				projects: formattedData,
+				uniqueCategories: uniqueCategories,
+			},
+			revalidate: 86400,
+		};
+	} catch (error) {
+		console.error("Error fetching data from Notion API:", error);
+		return {
+			props: {
+				projects: [],
+				uniqueCategories: [],
+			},
+		};
+	}
 }

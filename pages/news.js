@@ -37,6 +37,6 @@ export async function getStaticProps() {
     props: {
       posts: formattedData,
     },
-    revalidate: 60, // Use ISR, pages are recreated in the background as traffic comes in
+    revalidate: 86400, // Use ISR, pages are recreated in the background as traffic comes in
   };
 }

@@ -2,47 +2,9 @@ import { useState , useEffect } from "react";
 import { XBlock, XMasonry } from "react-xmasonry";
 import SingleIsotope from "./SingleIsotope";
 
-export default function IsotopeSection() {
-	const [projects, setProjects] = useState([]);
-	const [selectedProject, setSelectedProject] = useState([]);
-	const [uniqueCategories, setUniqueCategories] = useState([]);
+export default function IsotopeSection({projects, uniqueCategories}) {
+	const [selectedProject, setSelectedProject] = useState(projects);
 
-	useEffect(() => {
-		async function fetchData() {
-			try {
-				const res = await fetch("/api/pricelists");
-				const data = await res.json();
-				// console.log(data);
-				const formattedData = data.map((post) => ({
-					id: post.id,
-					title: post.properties.Title.title[0].plain_text,
-					link: post.properties.Link.url,
-					// convert category to lowercase to make it easier to filter
-					filterValue: post.properties.Category.select.name.toLowerCase(),
-					category: post.properties.Category.select.name,
-					image : post.properties.Image.files[0].file.url
-			
-				}));
-
-				// get unique categories
-
-				const categories = formattedData.map((item) => item.category);
-				const uniqueCategories = [...new Set(categories)];
-				setUniqueCategories(uniqueCategories);
-				console.log(formattedData)
-
-
-				setProjects(formattedData);
-				setSelectedProject(formattedData);
-			}
-			catch (error) {
-				console.error("Error fetching data from Notion API:", error);
-			}
-		}
-
-		fetchData();
-
-	}, []);
 
 	const handleFilterKeyChange = (key) => () => {
 		console.log("key");
