@@ -18,7 +18,7 @@ export default function News({ posts }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch("https://ves-whn8-git-main-pratham-saraf.vercel.app/api/posts");
+  const response = await fetch(`https://${process.env.VERCEL_URL}/api/posts`);
   const data = await response.json();
   const formattedData = data.map((post) => ({
 	id: post.id,
