@@ -22,7 +22,7 @@ export default function projects({projects, uniqueCategories}) {
 
 export async function getStaticProps() {
 	try {
-		const res = await fetch(`https://${process.env.VERCEL_URL}/api/pricelists`);
+		const res = await fetch("http://localhost:3000/api/pricelists");
 		const data = await res.json();
 
 		const formattedData = data.map((post) => ({
