@@ -57,12 +57,12 @@ export default async function handler(req, res) {
                 attachments: [
                     {
                         filename: 'logo.png',
-                        path: path.resolve(__dirname, '../../../../components/Email/images/logo.png'),
+                        path: path.resolve(__dirname, '../../components/Email/images/logo.png'),
                         cid: 'logo.png' 
                     },
                     {
                         filename: 'panel.jpg',
-                        path: path.resolve(__dirname, '../../../../components/Email/images/panel.jpg'),
+                        path: path.resolve(__dirname, '../../components/Email/images/panel.jpg'),
                         cid: 'panel.jpg' 
                     },
                     {
