@@ -57,32 +57,32 @@ export default async function handler(req, res) {
                 attachments: [
                     {
                         filename: 'logo.png',
-                        path: path.resolve(__dirname, '../../components/Email/images/logo.png'),
+                        path: path.resolve(__dirname, 'images/logo.png'),
                         cid: 'logo.png' 
                     },
                     {
                         filename: 'panel.jpg',
-                        path: path.resolve(__dirname, '../../components/Email/images/panel.jpg'),
+                        path: path.resolve(__dirname, 'images/panel.jpg'),
                         cid: 'panel.jpg' 
                     },
                     {
                         filename: 'facebook2x.png',
-                        path: path.resolve(__dirname, '../../../../components/Email/images/facebook2x.png'),
+                        path: path.resolve(__dirname, 'images/facebook2x.png'),
                         cid: 'facebook2x.png' 
                     },
                     {
                         filename: 'twitter2x.png',
-                        path: path.resolve(__dirname, '../../../../components/Email/images/twitter2x.png'),
+                        path: path.resolve(__dirname, 'images/twitter2x.png'),
                         cid: 'twitter2x.png' 
                     },
                     {
                         filename: 'instagram2x.png',
-                        path: path.resolve(__dirname, '../../../../components/Email/images/instagram2x.png'),
+                        path: path.resolve(__dirname, 'images/instagram2x.png'),
                         cid: 'instagram2x.png' 
                     },
                     {
                         filename: 'website2x.png',
-                        path: path.resolve(__dirname, '../../../../components/Email/images/website2x.png'),
+                        path: path.resolve(__dirname, 'images/website2x.png'),
                         cid: 'website2x.png' 
                     }
                 ]
