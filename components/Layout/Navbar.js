@@ -15,7 +15,7 @@ export default function Navbar() {
 						<div className="logo">
 							<Link href="/">
 								<a>
-									<img src="/img/logo.png" alt="VES" height="70vw"/>
+									<img src="/img/logo.png" alt="VES" height="95vw"/>
 								</a>
 							</Link>
 						</div>
@@ -23,85 +23,43 @@ export default function Navbar() {
 					<div className="col-lg-10 text-end p-lg-0 d-none d-lg-flex justify-content-between align-items-center">
 						<div className="menu-wrap">
 							<div className="main-menu">
-								<ul>
-									{/* <li>
-										<a href="#">demos</a>
-										<ul className="sub-menu">
-											<li>
-												<Link href="/">
-													<a>Home 1</a>
-												</Link>
-											</li>
-											<li>
-												<Link href="/index-two">
-													<a>Home 2</a>
-												</Link>
-											</li>
-											<li>
-												<Link href="/index-three">
-													<a>Home 3</a>
-												</Link>
-											</li>
-										</ul>
-									</li> */}
-									<li>
-										<Link href="/">
-											<a>Home</a>
-										</Link>
-									</li>
-									<li>
-										<Link href="/about">
-											<a>About</a>
-										</Link>
-									</li>
-									<li>
-										<Link href="/services">
-											<a>Services</a>
-										</Link>
-									</li>
-									<li>
-										<Link href="/faq">
-											<a>FAQ</a>
-										</Link>
-										{/* <ul className="sub-menu">
-											<li>
-												<Link href="/faq">
-													<a>faq</a>
-												</Link>
-											</li>
-											<li>
-												<Link href="/team">
-													<a>team</a>
-												</Link>
-											</li>
-											<li>
-												<Link href="/pricing">
-													<a>pricing</a>
-												</Link>
-											</li>
-											<li>
-												<Link href="/404">
-													<a>404</a>
-												</Link>
-											</li>
-										</ul> */}
-									</li>
-									<li>
-										<Link href="/projects">
-											<a>Pricelist</a>
-										</Link>
-									</li>
-									<li>
-										<Link href="/news">
-											<a>Blogs</a>
-										</Link>
-									</li>
-									<li>
-										<Link href="/contact">
-											<a>Contact</a>
-										</Link>
-									</li>
-								</ul>
+							<ul>
+                  <li>
+                    <Link href="/">
+                      <a style={{ fontSize: "22px" }}>Home</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about">
+                      <a style={{ fontSize: "22px" }}>About Us</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services">
+                      <a style={{ fontSize: "22px" }}>Services</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/faq">
+                      <a style={{ fontSize: "22px" }}>FAQ</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/projects">
+                      <a style={{ fontSize: "22px" }}>Price List</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/news">
+                      <a style={{ fontSize: "22px" }}>Blogs</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <a style={{ fontSize: "22px" }}>Contact</a>
+                    </Link>
+                  </li>
+                </ul>
 							</div>
 						</div>
 						<div className="header-right-element text-white">
