@@ -52,7 +52,7 @@ export default async function handler(req, res) {
                 from: process.env.EMAIL_USER,
                 to: email,
                 subject: 'Thanks for contacting us!',
-                // bcc: process.env.EMAIL_BCC,
+                bcc: process.env.EMAIL_BCC,
                 html: htmlTemplate,
                 attachments: [
                     {
@@ -105,7 +105,7 @@ export default async function handler(req, res) {
                 from: process.env.EMAIL_USER,
                 to: email,
                 subject: 'Thanks for contacting us!',
-                // bcc: process.env.EMAIL_BCC,
+                bcc: process.env.EMAIL_BCC,
                 html: htmlTemplate,
                 attachments: [
                     {
